@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="MW_HelpTicket::tickets" title="Help-Ticket" module="MW_HelpeTicket" sortOrder="10" resource="MW_HelpTicket::tickets" />
+	    <add id="MW_HelpTicket::ticket_list" title="Tickets" module="MW_HelpeTicket" sortOrder="10" parent="MW_HelpTicket::tickets" action="helptick/tick/ticklist" resource="MW_HelpTicket::tickets"/>
+	</menu>
+</config>

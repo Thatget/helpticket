@@ -1,0 +1,25 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var Magento\Customer\Block\Account\Customer $block */
+?>
+<?php if (!$block->customerLoggedIn()) : ?>
+
+<?php
+    $pageUrl = $block->getUrl('*/*/*', ['_current' => true, '_use_rewrite' => true]);
+
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $customerSession = $objectManager->create('Magento\Customer\Model\Session');
+    $customerSession->setMyValue($pageUrl);
+?>
+
+<div id="prompt-modal-content" style="display: none !important;">
+        <?php if ($block->getChildHtml()) :?>
+                <?= $block->getChildHtml() ?>
+            </div>
+        <?php endif; ?>
+</div>
+<?php endif; ?>
