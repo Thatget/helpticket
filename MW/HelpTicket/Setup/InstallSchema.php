@@ -24,39 +24,48 @@ class InstallSchema implements InstallSchemaInterface{
                 ['identity' => true, 'unsigned' => true, 'nullable' => false, 'primary' => true],
                 'Ticket Id'
             )->addColumn(
-                    'customer_id',
+                    'topic_id',
                     \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
                     null,
                     ['unsigned' => true],
-                    'Customer Id'
+                    'Topic Id'
             )->addColumn(
-                    'title',
+                'department_id',
+                \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+                null,
+                ['unsigned' => true],
+                'Topic Id'
+            )->addColumn(
+                    'content',
                     \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                     null,
                     ['nullable' => false],
-                    'Title'
-                )
-                ->addColumn(
+                    'Content'
+            )->addColumn(
                     'severity',
                     \Magento\Framework\DB\Ddl\Table::TYPE_SMALLINT,
                     null,
-                    ['nullable' => false],
+                    ['nullable' => true],
                     'Severity'
-                )
-                ->addColumn(
+            )->addColumn(
                     'created_at',
                     \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
                     null,
-                    ['nullable' => false],
+                    ['nullable' => false, 'default' => \Magento\Framework\DB\Ddl\Table::TIMESTAMP_INIT_UPDATE],
                     'Created At'
-                )
-                ->addColumn(
-                    'status',
-                    \Magento\Framework\DB\Ddl\Table::TYPE_SMALLINT,
-                    null,
-                    ['nullable' => false],
-                    'Severity'
-                );
+            )->addColumn(
+                'department',
+                \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                null,
+                ['nullable' => true],
+                'Department, The person in charge'
+            )->addColumn(
+                'topic',
+                \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                null,
+                ['nullable' => true],
+                'Department, The person in charge'
+            );
 
             $installer->getConnection()->createTable($table1);
         }
@@ -92,7 +101,7 @@ class InstallSchema implements InstallSchemaInterface{
             $installer->getConnection()->createTable($table2);
         }
         if (!$installer->tableExists('mw_helpticket_topic')){
-            $table = $installer->getConnection()->newTable(
+            $table3 = $installer->getConnection()->newTable(
                 $installer->getTable('mw_helpticket_topic')
             )->addColumn(
                 'topic_id',
@@ -101,7 +110,7 @@ class InstallSchema implements InstallSchemaInterface{
                 ['identity' => true, 'unsigned' => true, 'nullable' => false, 'primary' => true],
                 'topic Id'
             )->addColumn(
-                'title',
+                    'title',
                 \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                 null,
                 ['nullable' => false],
@@ -118,9 +127,21 @@ class InstallSchema implements InstallSchemaInterface{
                 null,
                 ['nullable' => false],
                 'Severity'
+            )->addColumn(
+                'department_id',
+                \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+                null,
+                ['nullable' => false],
+                'Department Id'
+            )->addColumn(
+                'created_at',
+                \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
+                null,
+                ['nullable' => false, 'default' => \Magento\Framework\DB\Ddl\Table::TIMESTAMP_INIT_UPDATE],
+                'Created At'
             );
 
-            $installer->getConnection()->createTable($table);
+            $installer->getConnection()->createTable($table3);
         }
         $installer->endSetup();
     }

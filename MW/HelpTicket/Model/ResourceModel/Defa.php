@@ -13,6 +13,6 @@ class Defa extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 
     protected function _construct()
     {
-        $this->_init('mw_table_helpticket', 'ticket_id');
+        $this->_init('mw_helpticket_department', 'department_id');
     }
 }
