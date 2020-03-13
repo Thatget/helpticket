@@ -1,5 +1,5 @@
 <?php
-namespace MW\HelpTicket\Controller\Adminhtml\Ticket;
+namespace MW\HelpTicket\Controller\Adminhtml\Tick;
 
 class Defa extends \Magento\Backend\App\Action
 {
@@ -17,7 +17,7 @@ class Defa extends \Magento\Backend\App\Action
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->prepend((__('')));
+        $resultPage->getConfig()->getTitle()->prepend((__('Department !')));
         return $resultPage;
     }
 
