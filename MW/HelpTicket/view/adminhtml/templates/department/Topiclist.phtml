@@ -1,0 +1,26 @@
+
+    <div class="dashboard-secondary col-m-4 col-m-pull-8">
+        <div class="dashboard-item">
+            <div class="dashboard-item-title"><?= $block->escapeHtml(__('Topic List')) ?></div>
+            <a href="#" id="quyet" >Quyet</a>
+        </div>
+    </div>
+</div>
+    <script type="text/javascript">
+        require([
+            'jquery'
+        ], function ($) {
+            $(document).ready(function() {
+                $("#quyet").click(function(){
+                    $.post(" <?= $block->getUrl('helptick/topic/topiclist'); ?>",
+                        {
+                            name: "Donald Duck",
+                            city: "Duckburg"
+                        },
+                        function(data, status){
+                            alert("Data: " + data + "\nStatus: " + status);
+                        });
+                });
+            });
+        });
+    </script>

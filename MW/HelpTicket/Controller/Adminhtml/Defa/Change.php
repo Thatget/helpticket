@@ -4,8 +4,7 @@ namespace MW\HelpTicket\Controller\Adminhtml\Defa;
 use Magento\Backend\App\AbstractAction;
 use Magento\Backend\App\Action;
 
-class Save extends AbstractAction {
-
+class Change extends AbstractAction {
 
     protected $defaFactory;
 
@@ -20,6 +19,8 @@ class Save extends AbstractAction {
 
     public function execute()
     {
+        var_dump($this->getRequest()->getParams());
+        die('Quyet');
         if ($this->getRequest()->getParams()) {
             $defa = $this->defaFactory->create();
             $params = $this->getRequest()->getParams();

@@ -88,7 +88,7 @@ class InstallSchema implements InstallSchemaInterface{
                 'staff',
                 \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                 null,
-                ['nullable' => false],
+                ['nullable' => true],
                 'staff'
             )->addColumn(
                     'status',

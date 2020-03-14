@@ -1,7 +1,7 @@
 <?php
 namespace MW\HelpTicket\Controller\Adminhtml\Tick;
 
-class Defa extends \Magento\Backend\App\Action
+class Defalist extends \Magento\Backend\App\Action
 {
     protected $resultPageFactory;
 

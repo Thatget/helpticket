@@ -25,4 +25,9 @@ class Defa extends AbstractModel implements \Magento\Framework\DataObject\Identi
         $value = [];
         return $value;
     }
+
+    public function getAvailableStatuses()
+    {
+        return [1=>__('Enabled'),0=>__('Disabled')];
+    }
 }

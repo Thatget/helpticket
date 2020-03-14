@@ -1,8 +1,3 @@
-<?php
-var_dump($block->getUrl('helptick/defa/save'));
-die('Quyet');
-?>
-
 <div class="dashboard-container row">
     <div class="dashboard-main col-m-8 col-m-push-4">
         <!--Department Name/Content !-->
@@ -29,38 +24,4 @@ die('Quyet');
             </ul>
         </div>
         <div id="tab_element_content">
-            <div id="tab1_content" >
-                <form class="form" action="<?= $block->getUrl('helptick/defa/save'); ?>" method="post">
-                        <div class="admin__field _required">
-                            <div class="admin__field-label">
-                                <label for="department_name" class="label"><span><?php echo __('Department_Name') ?></span></label>
-                            </div>
-                            <div class="admin__field-control">
-                                <input class="admin__control-text" type="text" name="department_name" id="department_name">
-                            </div>
-                        </div>
-                        <div class="admin__field _required">
-                            <div class="admin__field-label">
-                                <label for="staff" class="label"><span><?php echo __('Staff') ?></span></label>
-                            </div>
-                            <div class="admin__field-control">
-                                <input class="admin__control-text" type="text" name="department_name" id="staff">
-                            </div>
-                        </div>
 
-                    <div class="actions-toolbar">
-                        <div class="primary">
-                            <button type="submit" class="action submit primary" title="<?php  echo __('Submit') ?>"><span><?php echo __('Submit') ?></span></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <!--End Department-->
-    </div>
-    <div class="dashboard-secondary col-m-4 col-m-pull-8">
-        <div class="dashboard-item">
-            <div class="dashboard-item-title"><?= $block->escapeHtml(__('Topic')) ?></div>
-        </div>
-    </div>
-</div>
