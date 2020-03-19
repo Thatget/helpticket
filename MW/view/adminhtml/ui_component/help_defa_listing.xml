@@ -50,25 +50,26 @@
                 </templates>
             </settings>
         </filters>
-        <massaction name="listing_massaction">
+        <massaction name="listing_massaction" component="Magento_Ui/js/grid/tree-massactions">
             <action name="delete">
                 <settings>
                     <confirm>
-                        <message translate="true">Are you sure you want to delete selected items?</message>
+                        <message translate="true">Are you sure you want to delete the selected customers?</message>
                         <title translate="true">Delete items</title>
                     </confirm>
                     <url path="helptick/defa/massDelete"/>
                     <type>delete</type>
                     <label translate="true">Delete</label>
                 </settings>
-            </action><action name="change">
+            </action>
+            <action name="change">
                 <settings>
                     <confirm>
                         <message translate="true">Are you sure you want to change selected items?</message>
                         <title translate="true">change Statuses</title>
                     </confirm>
                     <url path="helptick/defa/massChange"/>
-                    <type>delete</type>
+                    <type>change</type>
                     <label translate="true">Change Statuses</label>
                 </settings>
             </action>

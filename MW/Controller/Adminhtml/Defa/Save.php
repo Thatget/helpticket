@@ -24,7 +24,7 @@ class Save extends AbstractAction {
             $defa = $this->defaFactory->create();
             $params = $this->getRequest()->getParams();
             $data['title'] = $params['title'];
-            $data['department_id'] = $params['department_id'] ?: null;
+            $data['department_id'] = isset($params['department_id'])?$params['department_id']: null;
             $data['status'] = isset($params['status']) ? $params['status'] : 1;
             $data['staff'] = $params['staff'];
             $defa->setData($data);
